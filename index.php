@@ -1,7 +1,6 @@
 <?php
 require_once 'model/database.php';
-
-$controller = '';
+$controller = 'producto';
 
 if(!isset($_REQUEST['c']))
 {
@@ -9,9 +8,6 @@ if(!isset($_REQUEST['c']))
     $controller = ucwords($controller) . 'Controller';
     $controller = new $controller;
     $controller->Index();
-    /*    echo "
-        <script>console.log('".$controller."')</script>
-        ";*/
 }
 else
 {
@@ -20,10 +16,6 @@ else
 
     require_once "controller/$controller.controller.php";
     $controller = ucwords($controller) . 'Controller';
-/*    echo "
-    <script>console.log('".$controller."')</script>
-    <script>console.log('".$accion."')</script>
-    ";*/
 
     $controller = new $controller;
 
